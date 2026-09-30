@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/*
+  Colors. The whole site is built from these.
+  Want a different accent? Swap the accent values below.
+*/
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-ink-950: #05060a; /* page background */
+  --color-ink-900: #0a0c12; /* alternate sections */
+  --color-ink-800: #10131b; /* cards */
+  --color-ink-700: #171b26; /* raised */
+  --color-line: #1f2533; /* borders */
+  --color-line-strong: #2c3445;
+
+  --color-fg: #f5f7fa; /* headings */
+  --color-body: #c3c9d4; /* body text */
+  --color-muted: #8b93a3; /* small print */
+
+  --color-navy-900: #0b1838;
+  --color-navy-800: #112454;
+  --color-navy-600: #2a4a94;
+  --color-navy-200: #bccbee;
+
+  --color-accent-300: #93c5fd;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-accent-700: #1d4ed8;
+  --color-accent-800: #1e40af;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem; /* keeps section titles clear of the sticky header */
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-fg;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-accent-600 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-400;
+  }
+}
+
+@layer components {
+  /* Sky-to-violet text used for headline highlights and the demo number. */
+  .text-gradient {
+    background: linear-gradient(95deg, #7dd3fc, var(--color-accent-400) 45%, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Faint grid behind the hero, fading out toward the edges. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 0%, #000 35%, transparent 100%);
+  }
+}
