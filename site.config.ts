@@ -239,7 +239,7 @@ export const pricing = {
       name: "Missed-Call Text-Back",
       price: "$97",
       period: "/mo",
-      setupFee: "$199",
+      setupFee: "$99",
       description: "Never lose a caller to voicemail again.",
       style: "light",
       features: ["Instant text to every missed caller", "Two-way texting from your phone", "Monthly report"],
@@ -265,7 +265,7 @@ export const pricing = {
       name: "Complete Package",
       price: "$249",
       period: "/mo",
-      setupFee: "$199",
+      setupFee: "$499",
       description: "Phones and website, handled.",
       style: "dark",
       features: ["Everything in AI Receptionist", "Professionally built website", "Hosting and updates included"],
@@ -399,7 +399,7 @@ export const faq = {
     {
       question: "What does setup cost, and is there a contract?",
       answer:
-        "Setup is a one-time $199. It covers building your script, testing everything, and setting up your call forwarding with you. After that it's month-to-month, and you can cancel anytime.",
+        "Setup is a one-time fee: $99 for Text-Back, $199 for AI Receptionist, or $499 for the Complete Package, which includes building your website. It covers building your script, testing everything, and setting up your call forwarding with you. After that it's month-to-month, and you can cancel anytime.",
     },
   ] as FaqItem[],
 };
