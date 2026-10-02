@@ -20,7 +20,6 @@ Placeholders look like `[THIS]`. Search the project for `[` to find any you have
 - [ ] `site.config.ts` → `business.demoPhone`: `[GHL DEMO NUMBER]`, then set `SHOW_DEMO = true`
 - [ ] Optional: `site.config.ts` → `GHL_WEBHOOK_URL`: `[GHL INBOUND WEBHOOK URL]` (also send each request into GoHighLevel)
 - [ ] Optional: `site.config.ts` → `GHL_FORM_EMBED_URL`: `[GHL FORM EMBED URL]` (only if `CONTACT_FORM_MODE = "ghl-embed"`)
-- [ ] `public/CNAME`: `[MY DOMAIN]`, e.g. `www.yourdomain.com`
 - [ ] Your photo → `public/images/prahaladh.jpg`, then set `about.photo: "/images/prahaladh.jpg"`
 - [ ] Later: testimonials → add to `testimonials.items`, set `SHOW_TESTIMONIALS = true`
 

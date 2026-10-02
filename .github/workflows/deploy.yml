@@ -41,10 +41,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # "/repo-name" on username.github.io/repo-name, or "" once a custom domain is set.
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-          # The live address, used for SEO tags and link previews.
-          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          # The site address comes from public/CNAME (https://voicepilotwa.com).
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Upload site

@@ -2,19 +2,20 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 /**
- * The public address of the site, used for SEO tags, the sitemap, and link previews.
- * Build-time only (it reads a file), so only import this from server code.
+ * The public address of the site, used for canonical links, the sitemap, link previews,
+ * and Google's business info. Build-time only (it reads a file), so only import this
+ * from server code.
  *
- * 1. On GitHub, the deploy workflow passes in the real address automatically.
- * 2. Otherwise, it uses your domain from public/CNAME.
- * 3. Otherwise, localhost.
+ * 1. Your domain from public/CNAME → https://voicepilotwa.com
+ * 2. Otherwise NEXT_PUBLIC_SITE_URL, if set
+ * 3. Otherwise localhost
  */
 export function getSiteUrl(): string {
-  const fromWorkflow = process.env.NEXT_PUBLIC_SITE_URL;
-  if (fromWorkflow) return fromWorkflow.replace(/\/+$/, "");
-
   const domain = readCname();
   if (domain) return `https://${domain}`;
+
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL;
+  if (fromEnv) return fromEnv.replace(/\/+$/, "");
 
   return "http://localhost:3000";
 }
