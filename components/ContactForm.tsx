@@ -32,11 +32,9 @@ export function ContactForm() {
     const data = new FormData(form);
     const field = (key: string) => String(data.get(key) ?? "").trim();
 
-    // Spam trap: people never see this field, bots fill it in.
-    if (field("website")) {
-      setStatus("success");
-      return;
-    }
+    // Spam trap: people never see this field, bots fill it in. If it's filled, still send
+    // (browser autofill can fill it by mistake), but flag it so you can spot bots.
+    const maybeSpam = Boolean(field("vp_extra_info"));
 
     const digits = field("phone").replace(/\D/g, "");
     if (digits.length < 10 || digits.length > 11) {
@@ -65,7 +63,9 @@ export function ContactForm() {
       sends.push(
         post("https://api.web3forms.com/submit", {
           access_key: WEB3FORMS_ACCESS_KEY.trim(),
-          subject: copy.emailSubject.replace("{name}", lead.name).replace("{business}", lead.business),
+          subject:
+            (maybeSpam ? "[Possible spam] " : "") +
+            copy.emailSubject.replace("{name}", lead.name).replace("{business}", lead.business),
           from_name: `${business.name} website`,
           name: lead.name,
           email: lead.email, // hitting Reply in your inbox goes to this address
@@ -179,10 +179,21 @@ export function ContactForm() {
           />
         </Field>
 
-        {/* Spam trap, hidden from people */}
+        {/* Spam trap, hidden from people. The name and data-* attributes keep autofill
+            and password managers from filling it in. */}
         <div aria-hidden className="absolute -left-[9999px]">
-          <label htmlFor="website">Leave this empty</label>
-          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+          <label htmlFor="vp_extra_info">Leave this empty</label>
+          <input
+            id="vp_extra_info"
+            name="vp_extra_info"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            data-lpignore="true"
+            data-1p-ignore="true"
+            data-bwignore="true"
+            data-form-type="other"
+          />
         </div>
       </div>
 
