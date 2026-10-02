@@ -32,9 +32,12 @@ export function Footer() {
               </a>
               <span className="block text-sm">{business.phoneHours}</span>
             </li>
-            <li>
+            <li className="flex gap-5">
               <Link href="/privacy/" className="hover:text-fg">
                 Privacy Policy
+              </Link>
+              <Link href="/terms/" className="hover:text-fg">
+                Terms
               </Link>
             </li>
           </ul>

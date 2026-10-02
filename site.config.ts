@@ -430,8 +430,10 @@ export const contact = {
     /** Subject line of the email you get. {name} and {business} are filled in. */
     emailSubject: "New consultation request: {name}, {business}",
     submitLabel: "Book My Consultation",
-    consent:
-      "By sending this, you agree to be contacted by phone or text about your request. Msg & data rates may apply. Reply STOP to opt out.",
+    /** Optional SMS opt-in checkbox under the phone field. "Privacy Policy" and "Terms" become links. */
+    smsConsentLabel:
+      "I agree to receive text messages from VoicePilot AI about my inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms.",
+    consent: "By sending this, you agree to be contacted about your request by phone or email.",
     successText: "Got it. I'll reach out soon at the time you picked.",
     errorText: "That didn't go through. Please try again, or call or email me instead.",
   },
@@ -453,12 +455,12 @@ export const footer = {
 
 export const privacy = {
   title: "Privacy Policy",
-  lastUpdated: "September 30, 2026",
+  lastUpdated: "October 1, 2026",
   sections: [
     {
       heading: "What I collect",
       body: [
-        "The consultation form collects your name, business name, phone, email, trade, best time to reach you, and message.",
+        "The consultation form collects your name, business name, phone, email, trade, best time to reach you, message, and whether you agreed to receive text messages.",
         "If you call the VoicePilot demo line, the call may be recorded and transcribed.",
       ],
     },
@@ -470,11 +472,9 @@ export const privacy = {
       ],
     },
     {
-      heading: "Text messages",
+      heading: "SMS Messaging",
       body: [
-        "If you give me your number, I may text you about your request. Message frequency varies. Msg & data rates may apply.",
-        "Reply STOP to opt out at any time. Reply HELP for help.",
-        "No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging opt-in data and consent will not be shared with any third parties.",
+        "By providing your phone number and checking the consent box, you agree to receive text messages from VoicePilot AI related to your inquiry and our services. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.",
       ],
     },
     {
@@ -488,6 +488,48 @@ export const privacy = {
       heading: "Your choices",
       body: [
         "Want your information corrected or deleted? Email or call me and I'll take care of it.",
+      ],
+    },
+  ],
+};
+
+/* -----------------------------------------------------------------------------
+   TERMS PAGE (/terms)
+   The "SMS Terms" part is what phone carriers look for (A2P 10DLC). Keep it in.
+   -------------------------------------------------------------------------- */
+
+export const terms = {
+  title: "Terms",
+  lastUpdated: "October 1, 2026",
+  intro: `These terms cover ${business.name}, based in ${business.homeBase}, ${business.state}.`,
+  sections: [
+    {
+      heading: "SMS Terms",
+      body: [
+        "Program: text messages about inquiries, appointments, and services from VoicePilot AI.",
+        "Message frequency varies.",
+        "Msg & data rates may apply.",
+        `Reply STOP to cancel at any time. Reply HELP for help, or email ${business.email}.`,
+        "Carriers are not liable for delayed or undelivered messages.",
+        "Consent to receive text messages is not a condition of purchase.",
+      ],
+    },
+    {
+      heading: "Services",
+      body: [
+        "VoicePilot AI provides the services described on this website, such as AI call answering, missed-call text-back, and websites. The exact setup for your business is agreed on during your consultation.",
+      ],
+    },
+    {
+      heading: "No guaranteed results",
+      body: [
+        "We work hard to help you catch more calls and book more jobs, but we can't guarantee specific results, such as a number of calls, leads, or booked jobs.",
+      ],
+    },
+    {
+      heading: "Billing and cancellation",
+      body: [
+        "Plans are month-to-month, with a one-time setup fee where noted. There's no long-term contract, and you can cancel anytime.",
       ],
     },
   ],
