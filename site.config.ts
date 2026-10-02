@@ -239,7 +239,7 @@ export const pricing = {
       name: "Missed-Call Text-Back",
       price: "$97",
       period: "/mo",
-      setupFee: "",
+      setupFee: "$199",
       description: "Never lose a caller to voicemail again.",
       style: "light",
       features: ["Instant text to every missed caller", "Two-way texting from your phone", "Monthly report"],
@@ -249,7 +249,7 @@ export const pricing = {
       name: "AI Receptionist",
       price: "$179",
       period: "/mo",
-      setupFee: "",
+      setupFee: "$199",
       description: "Every call answered, day or night.",
       style: "featured",
       badge: "Most Popular",
@@ -265,7 +265,7 @@ export const pricing = {
       name: "Complete Package",
       price: "$249",
       period: "/mo",
-      setupFee: "",
+      setupFee: "$199",
       description: "Phones and website, handled.",
       style: "dark",
       features: ["Everything in AI Receptionist", "Professionally built website", "Hosting and updates included"],
@@ -300,11 +300,10 @@ export const about = {
   /**
    * Your photo: put a JPG in public/images/ and set the path, e.g. "/images/prahaladh.jpg".
    * A portrait (4:5) about 800×1000 px and under 200 KB works best.
-   * Leave it "" to show a neutral placeholder.
+   * Leave it "" to hide the photo; the section rearranges itself.
    */
   photo: "",
   photoAlt: "Prahaladh, owner",
-  photoCaption: "Prahaladh · Bellevue, WA",
   points: [
     {
       icon: MapPin,
@@ -400,7 +399,7 @@ export const faq = {
     {
       question: "What does setup cost, and is there a contract?",
       answer:
-        "A one-time setup fee covers building and testing your system; we'll go over the exact amount on your consultation. After that it's month-to-month, and you can cancel anytime.",
+        "Setup is a one-time $199. It covers building your script, testing everything, and setting up your call forwarding with you. After that it's month-to-month, and you can cancel anytime.",
     },
   ] as FaqItem[],
 };
