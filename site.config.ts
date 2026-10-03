@@ -69,7 +69,7 @@ export const business = {
   /** How people reach you directly. Write it how you want it shown. Tap-to-call links are built from it. */
   phone: "(425) 786-6510",
   phoneHours: "Weekdays after 4 PM, anytime on weekends",
-  email: "voicepilotainc@gmail.com",
+  email: "prahaladh@voicepilotwa.com",
   emailHours: "Best during the day. I reply same day.",
   city: "Bellevue",
   state: "WA",
