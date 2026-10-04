@@ -1,4 +1,4 @@
-import { CalendarCheck, Check, MessageSquareText, Phone, PhoneIncoming, Siren } from "lucide-react";
+import { Check, Gift, MessageSquareText, Phone, PhoneIncoming, Siren } from "lucide-react";
 import { business, hero, SHOW_DEMO } from "@/site.config";
 import { telHref } from "@/lib/utils";
 import { ButtonLink, Container } from "@/components/ui";
@@ -37,6 +37,17 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-body sm:text-xl">{hero.subhead}</p>
 
+          {/* Free trial banner */}
+          <div className="mt-7 flex max-w-xl items-center gap-4 rounded-2xl border border-emerald-400/30 bg-emerald-400/[0.08] px-4 py-3.5 sm:px-5">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300 ring-1 ring-emerald-400/30">
+              <Gift aria-hidden className="size-6" />
+            </span>
+            <p className="leading-snug">
+              <span className="block text-xl font-extrabold tracking-tight text-white sm:text-2xl">{hero.trial.big}</span>
+              <span className="text-[15px] text-body sm:text-base">{hero.trial.text}</span>
+            </p>
+          </div>
+
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             {SHOW_DEMO ? (
               <>
@@ -51,7 +62,7 @@ export function Hero() {
             ) : (
               <>
                 <ButtonLink href="#contact" size="lg">
-                  <CalendarCheck aria-hidden className="size-5" />
+                  <Gift aria-hidden className="size-5" />
                   {hero.consultCta}
                 </ButtonLink>
                 <ButtonLink href="#pricing" size="lg" variant="outline">

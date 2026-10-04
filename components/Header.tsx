@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { CalendarCheck, Menu, Phone, X } from "lucide-react";
+import { Gift, Menu, Phone, X } from "lucide-react";
 import { business, header, SHOW_DEMO, SHOW_TESTIMONIALS } from "@/site.config";
 import { asset, telHref } from "@/lib/utils";
 import { ButtonLink, Container } from "@/components/ui";
@@ -61,7 +61,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="h-10 gap-1.5 px-3.5 text-sm sm:h-11 sm:gap-2 sm:px-5 sm:text-[15px]"
             >
-              <CalendarCheck aria-hidden className="size-4" />
+              <Gift aria-hidden className="size-4" />
               <span className="sm:hidden">{header.consultLabelShort}</span>
               <span className="hidden sm:inline">{header.consultLabel}</span>
             </ButtonLink>

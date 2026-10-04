@@ -47,7 +47,7 @@ export function Pricing() {
       <SectionHeading eyebrow={pricing.eyebrow} title={pricing.headline} intro={pricing.intro} align="center" />
 
       {/* Free trial line */}
-      <p className="mx-auto mt-6 flex w-fit max-w-full items-center gap-2.5 rounded-full border border-accent-500/30 bg-accent-500/10 px-5 py-2.5 text-center text-[15px] font-semibold text-accent-300 sm:text-base">
+      <p className="mx-auto mt-6 flex w-fit max-w-full items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2.5 text-center text-[15px] font-semibold text-emerald-300 sm:text-base">
         <Gift aria-hidden className="size-5 shrink-0" />
         {pricing.trial}
       </p>

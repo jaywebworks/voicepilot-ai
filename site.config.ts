@@ -96,8 +96,8 @@ export const seo = {
 
 export const header = {
   demoLabel: "Call the Demo",
-  consultLabel: "Book a Consultation",
-  consultLabelShort: "Book a Call", // shown on phones, where space is tight
+  consultLabel: "Start Free Trial",
+  consultLabelShort: "Free Trial", // shown on phones, where space is tight
   // "href" must match a section id on the page. Don't change those.
   nav: [
     { label: "How It Works", href: "#how-it-works" },
@@ -122,9 +122,11 @@ export const hero = {
   // With SHOW_DEMO on: "Call Our Demo Line" + "Book a Consultation".
   // With it off: "Book a Consultation" + "See Pricing".
   demoCta: "Call Our Demo Line",
-  consultCta: "Book a Consultation",
+  consultCta: "Start Your Free Trial",
+  /** Big free-trial banner between the subhead and the buttons. */
+  trial: { big: "14 days free.", text: "Try it on your real calls. Only pay if you keep it." },
   pricingCta: "See Pricing",
-  trustPoints: ["Local to Bellevue & Renton", "No contracts", "Set up in days"],
+  trustPoints: ["14-day free trial", "Local to Bellevue & Renton", "No contracts"],
 
   /** The sample job summary shown next to the headline. */
   exampleCard: {
@@ -227,10 +229,10 @@ export const demo = {
 
 export const pricing = {
   eyebrow: "Pricing",
-  headline: "One-time setup. Then a simple monthly plan.",
-  intro: "One recovered job usually pays for the month.",
+  headline: "Try it free for 14 days.",
+  intro: "Then a simple monthly plan. You only pay the one-time setup if you decide to keep it.",
   /** Highlighted line under the pricing heading. */
-  trial: "Try it free for 14 days. Your trial starts the day your system goes live.",
+  trial: "Your trial starts the day your system goes live.",
   /** Added after the setup amount on the three receptionist plans (not Website Only). */
   setupSuffix: ", only if you keep it after the trial",
   /** Highlighted box under the plan cards. */
@@ -252,7 +254,7 @@ export const pricing = {
       description: "Never lose a caller to voicemail again.",
       style: "light",
       features: ["Instant text to every missed caller", "Two-way texting from your phone", "Monthly report"],
-      cta: "Book a Consultation",
+      cta: "Start Free Trial",
     },
     {
       name: "AI Receptionist",
@@ -268,7 +270,7 @@ export const pricing = {
         "Books jobs or sends them to you to confirm",
         "Flags emergencies right away",
       ],
-      cta: "Book a Consultation",
+      cta: "Start Free Trial",
     },
     {
       name: "Complete Package",
@@ -278,7 +280,7 @@ export const pricing = {
       description: "Phones and website, handled.",
       style: "dark",
       features: ["Everything in AI Receptionist", "Professionally built website", "Hosting and updates included"],
-      cta: "Book a Consultation",
+      cta: "Start Free Trial",
     },
   ] satisfies Plan[],
   consult: {
@@ -423,16 +425,16 @@ export const faq = {
    -------------------------------------------------------------------------- */
 
 export const contact = {
-  eyebrow: "Book a consultation",
+  eyebrow: "Start your free trial",
   headline: "Want to see what you're missing?",
-  body: "Tell me a little about your business and I'll reach out to set up a short call.",
+  body: "Tell me a little about your business. I'll set up a short call, then get your 14-day free trial running.",
   nextStepsHeading: "What happens next",
   nextSteps: [
     { title: "You fill this out", text: "It takes about a minute." },
     { title: "I reach out", text: "By phone or email, at the time you pick." },
     {
       title: "We see if it's a fit",
-      text: "A short call about your calls, your schedule, and what you'd want handled. No pressure.",
+      text: "A short call about your calls and schedule. If it's a fit, your 14-day free trial starts once you're set up.",
     },
   ],
   altLabel: "Prefer to reach out yourself?",
@@ -441,8 +443,8 @@ export const contact = {
     tradeOptions: ["HVAC", "Plumbing", "Other"],
     bestTimeOptions: ["Weekday after 4 PM", "Weekend", "Anytime"],
     /** Subject line of the email you get. {name} and {business} are filled in. */
-    emailSubject: "New consultation request: {name}, {business}",
-    submitLabel: "Book My Consultation",
+    emailSubject: "New free trial request: {name}, {business}",
+    submitLabel: "Start My Free Trial",
     /** Optional SMS opt-in checkbox under the phone field. "Privacy Policy" and "Terms" become links. */
     smsConsentLabel:
       "I agree to receive text messages from VoicePilot AI about my inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms.",
@@ -513,7 +515,7 @@ export const privacy = {
 
 export const terms = {
   title: "Terms",
-  lastUpdated: "October 1, 2026",
+  lastUpdated: "October 3, 2026",
   intro: `These terms cover ${business.name}, based in ${business.homeBase}, ${business.state}.`,
   sections: [
     {
@@ -542,7 +544,15 @@ export const terms = {
     {
       heading: "Billing and cancellation",
       body: [
-        "Plans are month-to-month, with a one-time setup fee where noted. There's no long-term contract, and you can cancel anytime.",
+        "Receptionist plans (Missed-Call Text-Back, AI Receptionist, and Complete Package) start with a 14-day free trial, beginning the day your system goes live. If you keep it after the trial, there's a one-time setup fee, then month-to-month billing.",
+        "Website Only plans don't include a trial. There's no long-term contract on any plan, and you can cancel anytime.",
+      ],
+    },
+    {
+      heading: "Results guarantee",
+      body: [
+        "If VoicePilot doesn't catch at least one call you would've missed in your first paid month, your next month is free.",
+        "A call counts when you didn't pick up, VoicePilot answered or texted back, and the caller responded. Every one is listed in your monthly report.",
       ],
     },
   ],
