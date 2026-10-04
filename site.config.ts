@@ -76,6 +76,8 @@ export const business = {
   homeBase: "Bellevue & Renton",
   serviceAreas: ["Bellevue", "Renton", "Kirkland", "Redmond", "Kent", "Issaquah"],
   serviceRegion: "the Eastside and South King County",
+  /** Shown after the service-area list in the footer. */
+  remoteNote: "plus HVAC and plumbing companies anywhere in the US",
   tagline: "AI receptionist and missed-call text-back for HVAC and plumbing companies.",
 };
 
@@ -113,7 +115,7 @@ export const header = {
    -------------------------------------------------------------------------- */
 
 export const hero = {
-  eyebrow: "For Eastside HVAC & plumbing companies",
+  eyebrow: "Based in Bellevue, WA · Serving HVAC & plumbing companies nationwide",
   headline: "Stop losing jobs to missed calls.",
   /** Part of the headline shown in the accent color. */
   headlineHighlight: "missed calls.",
@@ -126,7 +128,7 @@ export const hero = {
   /** Big free-trial banner between the subhead and the buttons. */
   trial: { big: "14 days free.", text: "Try it on your real calls. Only pay if you keep it." },
   pricingCta: "See Pricing",
-  trustPoints: ["14-day free trial", "Local to Bellevue & Renton", "No contracts"],
+  trustPoints: ["14-day free trial", "No contracts", "Set up in days"],
 
   /** The sample job summary shown next to the headline. */
   exampleCard: {
@@ -319,7 +321,7 @@ export const about = {
     {
       icon: MapPin,
       title: "Local and focused",
-      text: "I'm Prahaladh. I'm local, and I only work with HVAC and plumbing companies around Bellevue and Renton.",
+      text: "I'm Prahaladh. I'm based in Bellevue, and I only work with HVAC and plumbing companies. If you're nearby, we can meet in person.",
     },
     {
       icon: Wrench,
@@ -381,6 +383,11 @@ export const faq = {
       question: "What happens with an emergency call at 2 AM?",
       answer:
         "You decide what counts as an emergency, like no heat in winter or an active leak. Those calls are texted to you right away with the caller's name, address, and problem. If someone reports a gas smell, it tells them to get out and call Puget Sound Energy or 911 first.",
+    },
+    {
+      question: "Do you work with companies outside Washington?",
+      answer:
+        "Yes. Everything is set up over the phone and video, so I can work with HVAC and plumbing companies anywhere in the US. Local companies can meet in person.",
     },
     {
       question: "Do I need a new phone number?",

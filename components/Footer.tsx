@@ -16,7 +16,7 @@ export function Footer() {
             <p className="mt-4 max-w-sm leading-relaxed">{business.tagline}</p>
             <p className="mt-4 max-w-sm leading-relaxed">
               <span className="font-semibold text-fg">{footer.serviceAreaLabel}:</span>{" "}
-              {business.serviceAreas.join(", ")}
+              {business.serviceAreas.join(", ")}, {business.remoteNote}.
             </p>
           </div>
 
