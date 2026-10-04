@@ -229,6 +229,15 @@ export const pricing = {
   eyebrow: "Pricing",
   headline: "One-time setup. Then a simple monthly plan.",
   intro: "One recovered job usually pays for the month.",
+  /** Highlighted line under the pricing heading. */
+  trial: "Try it free for 14 days. Your trial starts the day your system goes live.",
+  /** Added after the setup amount on the three receptionist plans (not Website Only). */
+  setupSuffix: ", only if you keep it after the trial",
+  /** Highlighted box under the plan cards. */
+  guarantee: {
+    title: "Results guarantee:",
+    text: "if VoicePilot doesn't catch at least one call you would've missed in your first month, your next month is free.",
+  },
   /**
    * Each plan has a one-time setup fee.
    *   setupFee: ""      → card says "+ one-time setup fee" (amount discussed on the consultation)
@@ -399,7 +408,12 @@ export const faq = {
     {
       question: "What does setup cost, and is there a contract?",
       answer:
-        "Setup is a one-time fee: $99 for Text-Back, $199 for AI Receptionist, or $499 for the Complete Package, which includes building your website. It covers building your script, testing everything, and setting up your call forwarding with you. After that it's month-to-month, and you can cancel anytime.",
+        "You get 14 days free, starting the day your system goes live. If you keep it, there's a one-time setup fee ($99, $199, or $499 depending on the plan), then it's month-to-month. Cancel anytime. And if it doesn't catch at least one call you would've missed in your first month, your next month is free.",
+    },
+    {
+      question: "What counts as a call I would've missed?",
+      answer:
+        "Any call you didn't pick up that VoicePilot answered or texted back, and the caller responded. You'll see every one in your monthly report.",
     },
   ] as FaqItem[],
 };

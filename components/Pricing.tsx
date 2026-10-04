@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarCheck, Check, Globe } from "lucide-react";
+import { ArrowRight, CalendarCheck, Check, Gift, Globe, ShieldCheck } from "lucide-react";
 import { pricing, type Plan } from "@/site.config";
 import { cn } from "@/lib/utils";
 import { ButtonLink, Section, SectionHeading } from "@/components/ui";
@@ -46,11 +46,27 @@ export function Pricing() {
     <Section id="pricing" tone="alt">
       <SectionHeading eyebrow={pricing.eyebrow} title={pricing.headline} intro={pricing.intro} align="center" />
 
+      {/* Free trial line */}
+      <p className="mx-auto mt-6 flex w-fit max-w-full items-center gap-2.5 rounded-full border border-accent-500/30 bg-accent-500/10 px-5 py-2.5 text-center text-[15px] font-semibold text-accent-300 sm:text-base">
+        <Gift aria-hidden className="size-5 shrink-0" />
+        {pricing.trial}
+      </p>
+
       <ul className="mt-14 grid gap-6 sm:mt-16 md:grid-cols-3 md:gap-5 lg:gap-7">
         {pricing.plans.map((plan) => (
           <PlanCard key={plan.name} plan={plan} />
         ))}
       </ul>
+
+      {/* Results guarantee */}
+      <div className="mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-2xl border border-emerald-400/30 bg-emerald-400/[0.07] p-5 sm:items-center sm:p-6">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300 ring-1 ring-emerald-400/30">
+          <ShieldCheck aria-hidden className="size-6" />
+        </span>
+        <p className="text-[15px] leading-relaxed text-body sm:text-base">
+          <span className="font-bold text-emerald-300">{pricing.guarantee.title}</span> {pricing.guarantee.text}
+        </p>
+      </div>
 
       <WebsiteOnlyCard />
 
@@ -128,7 +144,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <span className={cn("text-lg font-medium", s.period)}>{plan.period}</span>
       </p>
       <p className={cn("mt-3 border-b pb-6 text-[15px] font-medium", s.setup)}>
-        {plan.setupFee ? `+ ${plan.setupFee} one-time setup` : "+ one-time setup fee"}
+        {plan.setupFee ? `+ ${plan.setupFee} one-time setup${pricing.setupSuffix}` : "+ one-time setup fee"}
       </p>
 
       <ul className="mt-6 mb-8 space-y-3">
