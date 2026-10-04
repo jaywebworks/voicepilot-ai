@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { business, hero, pricing, seo } from "@/site.config";
 import { faqItems } from "@/components/Faq";
 import { getSiteUrl } from "@/lib/site-url";
@@ -95,6 +96,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        />
+        {/* GoHighLevel chat widget (bottom corner, every page) */}
+        <Script
+          id="ghl-chat-loader"
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6ac2add382099df3ee103537"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
         />
       </body>
     </html>

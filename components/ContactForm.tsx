@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useSyncExternalStore, type FormEvent, type ReactNode } from "react";
-import Link from "next/link";
 import { CircleAlert, CircleCheck, LoaderCircle } from "lucide-react";
 import { business, contact, GHL_WEBHOOK_URL, WEB3FORMS_ACCESS_KEY } from "@/site.config";
 import { cn, isRealUrl, mailHref, telHref } from "@/lib/utils";
@@ -52,7 +51,6 @@ export function ContactForm() {
       trade: field("trade"),
       bestTime: field("best_time"),
       message: field("message"),
-      smsConsent: data.get("sms_consent") === "yes",
     };
     const [first, ...rest] = lead.name.split(/\s+/);
 
@@ -73,7 +71,6 @@ export function ContactForm() {
           "Business name": lead.business,
           Trade: lead.trade,
           "Best time to reach": lead.bestTime,
-          "SMS consent": lead.smsConsent ? "Yes, agreed to receive texts" : "No",
           Message: lead.message || "(none)",
         }).then(async (res) => {
           const json = await res.json().catch(() => ({}));
@@ -87,7 +84,6 @@ export function ContactForm() {
       sends.push(
         post(GHL_WEBHOOK_URL, {
           ...lead,
-          sms_consent: lead.smsConsent,
           first_name: first,
           last_name: rest.join(" "),
           source: "Website consultation form",
@@ -160,7 +156,6 @@ export function ContactForm() {
             onChange={() => phoneError && setPhoneError("")}
             className={cn(inputClass, phoneError && "border-red-500")}
           />
-          <SmsConsent />
         </Field>
         <Field label="Email" htmlFor="email" className="sm:col-span-2">
           <input id="email" name="email" type="email" autoComplete="email" required className={inputClass} />
@@ -223,37 +218,6 @@ export function ContactForm() {
       </button>
       <p className="mt-4 text-sm leading-relaxed text-muted">{copy.consent}</p>
     </form>
-  );
-}
-
-/* Optional SMS opt-in. Unchecked by default; the form sends either way. */
-function SmsConsent() {
-  const parts = contact.form.smsConsentLabel.split(/(Privacy Policy|Terms)/);
-  return (
-    <label className="mt-3 flex cursor-pointer gap-3 text-sm leading-relaxed text-muted">
-      <input
-        type="checkbox"
-        name="sms_consent"
-        value="yes"
-        className="mt-0.5 size-5 shrink-0 cursor-pointer rounded accent-accent-600"
-      />
-      <span>
-        {parts.map((part, i) =>
-          part === "Privacy Policy" || part === "Terms" ? (
-            <Link
-              key={i}
-              href={part === "Terms" ? "/terms/" : "/privacy/"}
-              target="_blank"
-              className="font-semibold text-accent-400 underline-offset-2 hover:underline"
-            >
-              {part}
-            </Link>
-          ) : (
-            part
-          ),
-        )}
-      </span>
-    </label>
   );
 }
 

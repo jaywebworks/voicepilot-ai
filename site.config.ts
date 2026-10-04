@@ -452,10 +452,8 @@ export const contact = {
     /** Subject line of the email you get. {name} and {business} are filled in. */
     emailSubject: "New free trial request: {name}, {business}",
     submitLabel: "Start My Free Trial",
-    /** Optional SMS opt-in checkbox under the phone field. "Privacy Policy" and "Terms" become links. */
-    smsConsentLabel:
-      "I agree to receive text messages from VoicePilot AI about my inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms.",
-    consent: "By sending this, you agree to be contacted about your request by phone or email.",
+    /** Small note under the form's button. */
+    consent: "We'll reach out by phone or email about your inquiry. Want text updates? Use the chat button in the corner.",
     successText: "Got it. I'll reach out soon at the time you picked.",
     errorText: "That didn't go through. Please try again, or call or email me instead.",
   },
