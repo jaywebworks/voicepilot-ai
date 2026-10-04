@@ -50,6 +50,26 @@ export function LegalPage({ title, lastUpdated, intro, sections }: Props) {
           .
         </p>
       </section>
+
+      {/* Contact information (small print) */}
+      <section aria-labelledby="contact-info" className="mt-14 border-t border-line pt-6 text-sm leading-relaxed text-muted">
+        <h2 id="contact-info" className="text-sm font-semibold text-body">
+          Contact Information
+        </h2>
+        <address className="mt-2 not-italic">
+          {business.name}
+          <br />
+          {business.address}
+          <br />
+          <a href={telHref(business.phone)} className="hover:text-body">
+            {business.phone}
+          </a>
+          <br />
+          <a href={mailHref(business.email)} className="break-words hover:text-body">
+            {business.email}
+          </a>
+        </address>
+      </section>
     </Container>
   );
 }

@@ -20,7 +20,6 @@ const hasWeb3FormsKey = /^[\w-]{20,}$/.test(WEB3FORMS_ACCESS_KEY.trim());
 */
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [phoneError, setPhoneError] = useState("");
   const [firstName, setFirstName] = useState("");
   const hydrated = useHydrated();
   const copy = contact.form;
@@ -35,18 +34,9 @@ export function ContactForm() {
     // (browser autofill can fill it by mistake), but flag it so you can spot bots.
     const maybeSpam = Boolean(field("vp_extra_info"));
 
-    const digits = field("phone").replace(/\D/g, "");
-    if (digits.length < 10 || digits.length > 11) {
-      setPhoneError("Please enter a 10-digit phone number.");
-      form.querySelector<HTMLInputElement>("#phone")?.focus();
-      return;
-    }
-    setPhoneError("");
-
     const lead = {
       name: field("name"),
       business: field("business_name"),
-      phone: field("phone"),
       email: field("email"),
       trade: field("trade"),
       bestTime: field("best_time"),
@@ -67,7 +57,6 @@ export function ContactForm() {
           from_name: `${business.name} website`,
           name: lead.name,
           email: lead.email, // hitting Reply in your inbox goes to this address
-          phone: lead.phone,
           "Business name": lead.business,
           Trade: lead.trade,
           "Best time to reach": lead.bestTime,
@@ -141,20 +130,6 @@ export function ContactForm() {
             autoComplete="organization"
             required
             className={inputClass}
-          />
-        </Field>
-        <Field label="Phone" htmlFor="phone" error={phoneError} className="sm:col-span-2">
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            inputMode="tel"
-            autoComplete="tel"
-            required
-            aria-invalid={phoneError ? true : undefined}
-            aria-describedby={phoneError ? "phone-error" : undefined}
-            onChange={() => phoneError && setPhoneError("")}
-            className={cn(inputClass, phoneError && "border-red-500")}
           />
         </Field>
         <Field label="Email" htmlFor="email" className="sm:col-span-2">

@@ -74,6 +74,8 @@ export const business = {
   city: "Bellevue",
   state: "WA",
   homeBase: "Bellevue & Renton",
+  /** Shown in the "Contact Information" block at the bottom of /privacy and /terms. */
+  address: "3077 124th Ave NE, Bellevue, WA 98005",
   serviceAreas: ["Bellevue", "Renton", "Kirkland", "Redmond", "Kent", "Issaquah"],
   serviceRegion: "the Eastside and South King County",
   /** Shown after the service-area list in the footer. */
@@ -438,7 +440,7 @@ export const contact = {
   nextStepsHeading: "What happens next",
   nextSteps: [
     { title: "You fill this out", text: "It takes about a minute." },
-    { title: "I reach out", text: "By phone or email, at the time you pick." },
+    { title: "I reach out", text: "By email, at the time you pick." },
     {
       title: "We see if it's a fit",
       text: "A short call about your calls and schedule. If it's a fit, your 14-day free trial starts once you're set up.",
@@ -453,7 +455,7 @@ export const contact = {
     emailSubject: "New free trial request: {name}, {business}",
     submitLabel: "Start My Free Trial",
     /** Small note under the form's button. */
-    consent: "We'll reach out by phone or email about your inquiry. Want text updates? Use the chat button in the corner.",
+    consent: "We'll reach out by email about your inquiry.",
     successText: "Got it. I'll reach out soon at the time you picked.",
     errorText: "That didn't go through. Please try again, or call or email me instead.",
   },
