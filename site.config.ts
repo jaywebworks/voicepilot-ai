@@ -482,7 +482,7 @@ export const privacy = {
     {
       heading: "What I collect",
       body: [
-        "The consultation form collects your name, business name, phone, email, trade, best time to reach you, message, and whether you agreed to receive text messages.",
+        "The consultation form collects your name, business name, email, trade, best time to reach you, and an optional message. If you use the chat widget on this site, it collects your name, phone number, and message.",
         "If you call the VoicePilot demo line, the call may be recorded and transcribed.",
       ],
     },
@@ -496,7 +496,7 @@ export const privacy = {
     {
       heading: "SMS Messaging",
       body: [
-        "By providing your phone number and checking the consent box, you agree to receive text messages from VoicePilot AI related to your inquiry and our services. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.",
+        "By submitting your phone number through the chat widget on this website, you agree to receive text messages from VoicePilot AI related to your inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.",
       ],
     },
     {
