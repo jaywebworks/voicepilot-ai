@@ -37,7 +37,7 @@ export function DemoCallout() {
               {demo.buttonLabel}
             </ButtonLink>
 
-            <p className="mx-auto mt-7 max-w-md text-[15px] text-muted">{demo.tip}</p>
+            {demo.tip && <p className="mx-auto mt-7 max-w-md text-[15px] text-muted">{demo.tip}</p>}
           </div>
         </div>
       </Container>

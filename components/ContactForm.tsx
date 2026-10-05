@@ -176,8 +176,8 @@ export function ContactForm() {
               {business.email}
             </a>{" "}
             ·{" "}
-            <a href={telHref(business.phone)} className="font-semibold underline">
-              {business.phone}
+            <a href={telHref(business.demoPhone)} className="font-semibold underline">
+              {business.demoPhone}
             </a>
           </p>
         </div>

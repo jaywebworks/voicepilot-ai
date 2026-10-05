@@ -48,16 +48,20 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-start">
             {SHOW_DEMO ? (
               <>
-                <ButtonLink href={telHref(business.demoPhone)} size="lg">
-                  <Phone aria-hidden className="size-5" />
-                  {hero.demoCta}
-                </ButtonLink>
-                <ButtonLink href="#contact" size="lg" variant="outline">
+                <ButtonLink href="#contact" size="lg">
+                  <Gift aria-hidden className="size-5" />
                   {hero.consultCta}
                 </ButtonLink>
+                <div className="flex flex-col">
+                  <ButtonLink href={telHref(business.demoPhone)} size="lg" variant="outline">
+                    <Phone aria-hidden className="size-5" />
+                    {hero.demoCta}
+                  </ButtonLink>
+                  <p className="mt-2 text-center text-sm text-muted sm:text-left">{hero.demoNote}</p>
+                </div>
               </>
             ) : (
               <>

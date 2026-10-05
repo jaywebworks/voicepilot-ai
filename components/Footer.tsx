@@ -27,10 +27,10 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href={telHref(business.phone)} className="font-semibold text-fg hover:text-accent-400">
-                {business.phone}
+              <a href={telHref(business.demoPhone)} className="font-semibold text-fg hover:text-accent-400">
+                {business.demoPhone}
               </a>
-              <span className="block text-sm">{business.phoneHours}</span>
+              <span className="block text-sm">Demo line, call anytime</span>
             </li>
             <li className="flex gap-5">
               <Link href="/privacy/" className="hover:text-fg">

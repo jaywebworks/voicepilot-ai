@@ -47,25 +47,27 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-1">
-          {SHOW_DEMO ? (
-            <ButtonLink
+          {SHOW_DEMO && (
+            <a
               href={telHref(business.demoPhone)}
-              className="h-10 gap-1.5 px-3.5 text-sm sm:h-11 sm:gap-2 sm:px-5 sm:text-[15px]"
+              className="mr-3 hidden items-center gap-2 text-[15px] font-semibold text-fg transition-colors hover:text-accent-400 xl:inline-flex"
             >
-              <Phone aria-hidden className="size-4" />
-              {header.demoLabel}
-            </ButtonLink>
-          ) : (
-            <ButtonLink
-              href={asset("/#contact")}
-              onClick={() => setOpen(false)}
-              className="h-10 gap-1.5 px-3.5 text-sm sm:h-11 sm:gap-2 sm:px-5 sm:text-[15px]"
-            >
-              <Gift aria-hidden className="size-4" />
-              <span className="sm:hidden">{header.consultLabelShort}</span>
-              <span className="hidden sm:inline">{header.consultLabel}</span>
-            </ButtonLink>
+              <Phone aria-hidden className="size-4 text-accent-400" />
+              <span>
+                <span className="font-normal text-muted">Demo: </span>
+                {business.demoPhone}
+              </span>
+            </a>
           )}
+          <ButtonLink
+            href={asset("/#contact")}
+            onClick={() => setOpen(false)}
+            className="h-10 gap-1.5 px-3.5 text-sm sm:h-11 sm:gap-2 sm:px-5 sm:text-[15px]"
+          >
+            <Gift aria-hidden className="size-4" />
+            <span className="sm:hidden">{header.consultLabelShort}</span>
+            <span className="hidden sm:inline">{header.consultLabel}</span>
+          </ButtonLink>
           <button
             type="button"
             className="-mr-2 inline-flex size-10 items-center justify-center rounded-lg text-fg hover:bg-white/5 lg:hidden"

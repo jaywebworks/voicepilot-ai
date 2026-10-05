@@ -57,11 +57,10 @@ function NotConnected() {
         </a>
         <br />
         or call/text{" "}
-        <a href={telHref(business.phone)} className="font-semibold text-accent-400 underline-offset-4 hover:underline">
-          {business.phone}
+        <a href={telHref(business.demoPhone)} className="font-semibold text-accent-400 underline-offset-4 hover:underline">
+          {business.demoPhone}
         </a>
       </p>
-      <p className="mt-2 text-sm text-muted">Calls: {business.phoneHours}.</p>
     </div>
   );
 }

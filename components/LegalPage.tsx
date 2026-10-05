@@ -44,8 +44,8 @@ export function LegalPage({ title, lastUpdated, intro, sections }: Props) {
             {business.email}
           </a>{" "}
           or call{" "}
-          <a href={telHref(business.phone)} className="font-semibold text-accent-400 hover:underline">
-            {business.phone}
+          <a href={telHref(business.demoPhone)} className="font-semibold text-accent-400 hover:underline">
+            {business.demoPhone}
           </a>
           .
         </p>

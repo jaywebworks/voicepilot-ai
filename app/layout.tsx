@@ -42,7 +42,7 @@ const schema = {
       name: business.name,
       description: seo.description,
       url: `${siteUrl}/`,
-      telephone: business.phone,
+      telephone: business.demoPhone,
       email: business.email,
       image: `${siteUrl}/og.png`,
       founder: { "@type": "Person", name: business.owner },

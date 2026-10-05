@@ -72,10 +72,10 @@ function ContactLine() {
         </li>
         <li className="flex flex-wrap items-center gap-x-2">
           <Phone aria-hidden className="size-4 text-accent-400" />
-          <a href={telHref(business.phone)} className="font-semibold text-fg hover:text-accent-400">
-            {business.phone}
+          <a href={telHref(business.demoPhone)} className="font-semibold text-fg hover:text-accent-400">
+            {business.demoPhone}
           </a>
-          <span>· {business.phoneHours}</span>
+          <span>· demo line, call anytime</span>
         </li>
       </ul>
     </div>

@@ -32,7 +32,7 @@ export const SHOW_TESTIMONIALS = false;
  * Turn on once your GoHighLevel AI number is live and set as business.demoPhone.
  * While off, those buttons say "Book a Consultation" instead.
  */
-export const SHOW_DEMO = false;
+export const SHOW_DEMO = true;
 
 /**
  * Which consultation form the site shows:
@@ -65,10 +65,12 @@ export const business = {
   name: "VoicePilot AI",
   owner: "Prahaladh",
   /** Your GoHighLevel number the AI answers. Used by the demo buttons (see SHOW_DEMO). */
-  demoPhone: "[GHL DEMO NUMBER]",
-  /** How people reach you directly. Write it how you want it shown. Tap-to-call links are built from it. */
+  demoPhone: "(425) 699-4038",
+  /**
+   * Registered business number. Only shown in the Contact Information block on /privacy
+   * and /terms (it must match the business registration). Everywhere else shows demoPhone.
+   */
   phone: "(425) 786-6510",
-  phoneHours: "Weekdays after 4 PM, anytime on weekends",
   email: "prahaladh@voicepilotwa.com",
   emailHours: "Best during the day. I reply same day.",
   city: "Bellevue",
@@ -126,6 +128,8 @@ export const hero = {
   // With SHOW_DEMO on: "Call Our Demo Line" + "Book a Consultation".
   // With it off: "Book a Consultation" + "See Pricing".
   demoCta: "Call Our Demo Line",
+  /** Small text under the demo button. */
+  demoNote: "Call anytime. Hear exactly what your customers would hear.",
   consultCta: "Start Your Free Trial",
   /** Big free-trial banner between the subhead and the buttons. */
   trial: { big: "14 days free.", text: "Try it on your real calls. Only pay if you keep it." },
@@ -219,10 +223,10 @@ export const howItWorks = {
 
 export const demo = {
   eyebrow: "Hear it live",
-  headline: "Don't take my word for it. Call it yourself.",
-  body: "Hear exactly what your customers would hear.",
+  headline: "Don't take our word for it. Call it yourself.",
+  body: "Pretend you're a customer with a leaking water heater. Takes 2 minutes.",
   buttonLabel: "Call the Demo Line",
-  tip: "Try saying: “My AC stopped working. Can someone come out today?”",
+  tip: "",
 };
 
 /* -----------------------------------------------------------------------------
