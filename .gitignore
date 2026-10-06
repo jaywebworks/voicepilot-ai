@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # local double-click launcher (has a machine-specific Node path)
-/Open VoicePilot Site.bat
+/Open VoiceButler Site.bat

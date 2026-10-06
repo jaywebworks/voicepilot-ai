@@ -6,7 +6,7 @@ import { join } from "node:path";
  * and Google's business info. Build-time only (it reads a file), so only import this
  * from server code.
  *
- * 1. Your domain from public/CNAME → https://voicepilotwa.com
+ * 1. Your domain from public/CNAME → https://voicebutlerwa.com
  * 2. Otherwise NEXT_PUBLIC_SITE_URL, if set
  * 3. Otherwise localhost
  */

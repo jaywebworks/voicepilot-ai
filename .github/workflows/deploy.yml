@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # The site address comes from public/CNAME (https://voicepilotwa.com).
+          # The site address comes from public/CNAME (https://voicebutlerwa.com).
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Upload site

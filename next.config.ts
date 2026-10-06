@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 /*
-  The site is served from the root of its own domain (voicepilotwa.com, set in public/CNAME),
+  The site is served from the root of its own domain (voicebutlerwa.com, set in public/CNAME),
   so links and files need no path prefix.
 
   If you ever go back to a GitHub Pages project address (username.github.io/repo-name),

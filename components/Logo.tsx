@@ -1,7 +1,7 @@
 import { AudioLines } from "lucide-react";
 import { business } from "@/site.config";
 
-/* Text logo: a small icon mark + the business name. A trailing " AI" gets the accent color. */
+/* Text logo: a small icon mark + the business name. A trailing " AI", if any, gets the accent color. */
 export function Logo() {
   const match = business.name.match(/^(.*?)(\s+AI)$/);
 

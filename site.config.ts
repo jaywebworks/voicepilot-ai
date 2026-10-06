@@ -62,7 +62,7 @@ export const GHL_WEBHOOK_URL = "[GHL INBOUND WEBHOOK URL]";
    -------------------------------------------------------------------------- */
 
 export const business = {
-  name: "VoicePilot AI",
+  name: "VoiceButler",
   owner: "Prahaladh",
   /** Your GoHighLevel number the AI answers. Used by the demo buttons (see SHOW_DEMO). */
   demoPhone: "(425) 699-4038",
@@ -199,7 +199,7 @@ export const howItWorks = {
     {
       time: "7:41 PM",
       icon: AudioLines,
-      title: "VoicePilot answers in your company's name.",
+      title: "VoiceButler answers in your company's name.",
       text: "It gets her address and the problem, then books her for tomorrow morning. Hang-ups get a text instantly.",
     },
     {
@@ -246,7 +246,7 @@ export const pricing = {
   /** Highlighted box under the plan cards. */
   guarantee: {
     title: "Results guarantee:",
-    text: "if VoicePilot doesn't catch at least one call you would've missed in your first month, your next month is free.",
+    text: "if VoiceButler doesn't catch at least one call you would've missed in your first month, your next month is free.",
   },
   /**
    * Each plan has a one-time setup fee.
@@ -398,7 +398,7 @@ export const faq = {
     {
       question: "Do I need a new phone number?",
       answer:
-        "No. You keep your number. Calls you don't pick up forward to VoicePilot, and I set that up with you. Customers never see a different number.",
+        "No. You keep your number. Calls you don't pick up forward to VoiceButler, and I set that up with you. Customers never see a different number.",
     },
     {
       question: "How does it know my schedule?",
@@ -418,7 +418,7 @@ export const faq = {
     {
       question: "How is this different from an answering service?",
       answer:
-        "Most answering services bill by the minute, read a generic script, and take a message. VoicePilot picks up instantly, knows your business, books the job, and costs one flat monthly price.",
+        "Most answering services bill by the minute, read a generic script, and take a message. VoiceButler picks up instantly, knows your business, books the job, and costs one flat monthly price.",
     },
     {
       question: "What does setup cost, and is there a contract?",
@@ -428,7 +428,7 @@ export const faq = {
     {
       question: "What counts as a call I would've missed?",
       answer:
-        "Any call you didn't pick up that VoicePilot answered or texted back, and the caller responded. You'll see every one in your monthly report.",
+        "Any call you didn't pick up that VoiceButler answered or texted back, and the caller responded. You'll see every one in your monthly report.",
     },
   ] as FaqItem[],
 };
@@ -487,7 +487,7 @@ export const privacy = {
       heading: "What I collect",
       body: [
         "The consultation form collects your name, business name, email, trade, best time to reach you, and an optional message. If you use the chat widget on this site, it collects your name, phone number, and message.",
-        "If you call the VoicePilot demo line, the call may be recorded and transcribed.",
+        "If you call the VoiceButler demo line, the call may be recorded and transcribed.",
       ],
     },
     {
@@ -500,7 +500,7 @@ export const privacy = {
     {
       heading: "SMS Messaging",
       body: [
-        "By submitting your phone number through the chat widget on this website, you agree to receive text messages from VoicePilot AI related to your inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.",
+        "By submitting your phone number through the chat widget on this website, you agree to receive text messages from VoiceButler related to your inquiry. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.",
       ],
     },
     {
@@ -532,7 +532,7 @@ export const terms = {
     {
       heading: "SMS Terms",
       body: [
-        "Program: text messages about inquiries, appointments, and services from VoicePilot AI.",
+        "Program: text messages about inquiries, appointments, and services from VoiceButler.",
         "Message frequency varies.",
         "Msg & data rates may apply.",
         `Reply STOP to cancel at any time. Reply HELP for help, or email ${business.email}.`,
@@ -543,7 +543,7 @@ export const terms = {
     {
       heading: "Services",
       body: [
-        "VoicePilot AI provides the services described on this website, such as AI call answering, missed-call text-back, and websites. The exact setup for your business is agreed on during your consultation.",
+        "VoiceButler provides the services described on this website, such as AI call answering, missed-call text-back, and websites. The exact setup for your business is agreed on during your consultation.",
       ],
     },
     {
@@ -562,8 +562,8 @@ export const terms = {
     {
       heading: "Results guarantee",
       body: [
-        "If VoicePilot doesn't catch at least one call you would've missed in your first paid month, your next month is free.",
-        "A call counts when you didn't pick up, VoicePilot answered or texted back, and the caller responded. Every one is listed in your monthly report.",
+        "If VoiceButler doesn't catch at least one call you would've missed in your first paid month, your next month is free.",
+        "A call counts when you didn't pick up, VoiceButler answered or texted back, and the caller responded. Every one is listed in your monthly report.",
       ],
     },
   ],
