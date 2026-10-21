@@ -56,7 +56,7 @@ const schema = {
         "@type": "City",
         name: `${city}, ${business.state}`,
       })),
-      priceRange: "$49–$249 per month plus one-time setup",
+      priceRange: "$49–$249 per month",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Plans",
