@@ -238,27 +238,24 @@ export const demo = {
 export const pricing = {
   eyebrow: "Pricing",
   headline: "Try it free for 14 days.",
-  intro: "Then a simple monthly plan. You only pay the one-time setup if you decide to keep it.",
+  intro: "Then a simple monthly plan. No setup fees and no contracts.",
   /** Highlighted line under the pricing heading. */
   trial: "Your trial starts the day your system goes live.",
-  /** Added after the setup amount on the three receptionist plans (not Website Only). */
-  setupSuffix: ", only if you keep it after the trial",
   /** Highlighted box under the plan cards. */
   guarantee: {
     title: "Results guarantee:",
     text: "if VoiceButler doesn't catch at least one call you would've missed in your first month, your next month is free.",
   },
   /**
-   * Each plan has a one-time setup fee.
-   *   setupFee: ""      → card says "+ one-time setup fee" (amount discussed on the consultation)
-   *   setupFee: "$497"  → card says "+ $497 one-time setup"
+   * setupLine: the line under the price (e.g. "No setup fee. No contract.").
+   * note: optional small print under the features list.
    */
   plans: [
     {
       name: "Missed-Call Text-Back",
       price: "$97",
       period: "/mo",
-      setupFee: "$99",
+      setupLine: "No setup fee. No contract.",
       description: "Never lose a caller to voicemail again.",
       style: "light",
       features: ["Instant text to every missed caller", "Two-way texting from your phone", "Monthly report"],
@@ -268,7 +265,7 @@ export const pricing = {
       name: "AI Receptionist",
       price: "$179",
       period: "/mo",
-      setupFee: "$199",
+      setupLine: "No setup fee. No contract.",
       description: "Every call answered, day or night.",
       style: "featured",
       badge: "Most Popular",
@@ -284,11 +281,12 @@ export const pricing = {
       name: "Complete Package",
       price: "$249",
       period: "/mo",
-      setupFee: "$499",
+      setupLine: "+ $499 one-time website build, paid when you're ready for your site",
       description: "Phones and website, handled.",
       style: "dark",
       features: ["Everything in AI Receptionist", "Professionally built website", "Hosting and updates included"],
-      cta: "Start Free Trial",
+      note: "Free trial covers the AI receptionist. Your website is built once you decide to keep it.",
+      cta: "Get Started",
     },
   ] satisfies Plan[],
   consult: {
@@ -423,7 +421,7 @@ export const faq = {
     {
       question: "What does setup cost, and is there a contract?",
       answer:
-        "You get 14 days free, starting the day your system goes live. If you keep it, there's a one-time setup fee ($99, $199, or $499 depending on the plan), then it's month-to-month. Cancel anytime. And if it doesn't catch at least one call you would've missed in your first month, your next month is free.",
+        "There's no setup fee on Missed-Call Text-Back or AI Receptionist. The Complete Package has a one-time $499 website build, paid when you're ready for your site. Every plan starts with 14 days free, beginning the day your system goes live, then it's month-to-month. No contract, cancel anytime. And if it doesn't catch at least one call you would've missed in your first month, your next month is free.",
     },
     {
       question: "What counts as a call I would've missed?",
@@ -555,7 +553,7 @@ export const terms = {
     {
       heading: "Billing and cancellation",
       body: [
-        "Receptionist plans (Missed-Call Text-Back, AI Receptionist, and Complete Package) start with a 14-day free trial, beginning the day your system goes live. If you keep it after the trial, there's a one-time setup fee, then month-to-month billing.",
+        "Receptionist plans (Missed-Call Text-Back, AI Receptionist, and Complete Package) start with a 14-day free trial, beginning the day your system goes live. If you keep it after the trial, billing is month-to-month with no setup fee. The Complete Package also has a one-time $499 website build fee, paid when you're ready for your site.",
         "Website Only plans don't include a trial. There's no long-term contract on any plan, and you can cancel anytime.",
       ],
     },
@@ -581,11 +579,12 @@ export type Plan = {
   name: string;
   price: string;
   period: string;
-  setupFee: string;
+  setupLine: string;
   description: string;
   style: "light" | "featured" | "dark";
   badge?: string;
   features: string[];
+  note?: string;
   cta: string;
 };
 

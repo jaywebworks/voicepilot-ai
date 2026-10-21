@@ -143,11 +143,11 @@ function PlanCard({ plan }: { plan: Plan }) {
         <span className={cn("text-5xl font-extrabold tracking-tight", s.price)}>{plan.price}</span>
         <span className={cn("text-lg font-medium", s.period)}>{plan.period}</span>
       </p>
-      <p className={cn("mt-3 border-b pb-6 text-[15px] font-medium", s.setup)}>
-        {plan.setupFee ? `+ ${plan.setupFee} one-time setup${pricing.setupSuffix}` : "+ one-time setup fee"}
+      <p className={cn("mt-3 border-b pb-6 text-[15px] font-medium md:min-h-[calc(2lh+1.5rem)]", s.setup)}>
+        {plan.setupLine}
       </p>
 
-      <ul className="mt-6 mb-8 space-y-3">
+      <ul className={cn("mt-6 space-y-3", plan.note ? "mb-5" : "mb-8")}>
         {plan.features.map((feature) => (
           <li key={feature} className={cn("flex gap-3", s.feature)}>
             <Check aria-hidden className={cn("mt-0.5 size-5 shrink-0", s.check)} strokeWidth={2.5} />
@@ -155,6 +155,7 @@ function PlanCard({ plan }: { plan: Plan }) {
           </li>
         ))}
       </ul>
+      {plan.note && <p className={cn("mb-8 text-sm leading-relaxed", s.description)}>{plan.note}</p>}
 
       <ButtonLink href="#contact" variant={s.button} size="lg" className="mt-auto w-full">
         {plan.cta}
